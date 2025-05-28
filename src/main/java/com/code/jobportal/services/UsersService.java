@@ -1,5 +1,6 @@
 package com.code.jobportal.services;
 
+
 import com.code.jobportal.Entity.JobSeekerProfile;
 import com.code.jobportal.Entity.RecruiterProfile;
 import com.code.jobportal.Entity.Users;

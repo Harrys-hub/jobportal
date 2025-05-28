@@ -1,5 +1,6 @@
 package com.code.jobportal.repositories;
 
+
 import com.code.jobportal.Entity.JobSeekerProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
