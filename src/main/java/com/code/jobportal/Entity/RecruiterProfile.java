@@ -1,10 +1,9 @@
 package com.code.jobportal.Entity;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 @Entity
-@Table(name="recruiter_profile")
+@Table(name = "recruiter_profile")
 public class RecruiterProfile {
 
     @Id
@@ -18,8 +17,11 @@ public class RecruiterProfile {
     private String firstName;
     private String lastName;
     private String city;
+
     private String state;
+
     private String country;
+
     private String company;
 
     @Column(nullable = true, length = 64)
@@ -41,22 +43,7 @@ public class RecruiterProfile {
     }
 
     public RecruiterProfile(Users users) {
-        this.userId=users;
-    }
-
-    @Override
-    public String toString() {
-        return "RecruiterProfile{" +
-                "userAccountId=" + userAccountId +
-                ", userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", company='" + company + '\'' +
-                ", profilePhoto='" + profilePhoto + '\'' +
-                '}';
+        this.userId = users;
     }
 
     public int getUserAccountId() {
@@ -129,5 +116,20 @@ public class RecruiterProfile {
 
     public void setProfilePhoto(String profilePhoto) {
         this.profilePhoto = profilePhoto;
+    }
+
+    @Override
+    public String toString() {
+        return "RecruiterProfile{" +
+                "userAccountId=" + userAccountId +
+                ", userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", company='" + company + '\'' +
+                ", profilePhoto='" + profilePhoto + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,3 @@
-
 package com.code.jobportal.Entity;
 
 import jakarta.persistence.*;
