@@ -1,5 +1,6 @@
 package com.code.jobportal.Entity;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
