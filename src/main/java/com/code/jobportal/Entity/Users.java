@@ -1,5 +1,5 @@
-package com.code.jobportal.Entity;
 
+package com.code.jobportal.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
