@@ -21,18 +21,17 @@ public class JobPostActivity {
     @JoinColumn(name = "jobLocationId", referencedColumnName = "Id")
     private JobLocation jobLocationId;
 
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "jobCompanyId", referencedColumnName = "Id")
     private JobCompany jobCompanyId;
 
     @Transient
-    private boolean isActive;
+    private Boolean isActive;
 
     @Transient
-    private boolean isSaved;
+    private Boolean isSaved;
 
-    @Length(max=10000)
+    @Length(max = 10000)
     private String descriptionOfJob;
 
     private String jobType;
@@ -46,37 +45,19 @@ public class JobPostActivity {
     public JobPostActivity() {
     }
 
-    public JobPostActivity(String jobTitle, Date postedDate, String remote, String salary, String jobType, String descriptionOfJob, boolean isSaved, boolean isActive, JobCompany jobCompanyId, JobLocation jobLocationId, Users postedById, Integer jobPostId) {
-        this.jobTitle = jobTitle;
-        this.postedDate = postedDate;
-        this.remote = remote;
-        this.salary = salary;
-        this.jobType = jobType;
-        this.descriptionOfJob = descriptionOfJob;
-        this.isSaved = isSaved;
-        this.isActive = isActive;
-        this.jobCompanyId = jobCompanyId;
-        this.jobLocationId = jobLocationId;
-        this.postedById = postedById;
+    public JobPostActivity(Integer jobPostId, Users postedById, JobLocation jobLocationId, JobCompany jobCompanyId, Boolean isActive, Boolean isSaved, String descriptionOfJob, String jobType, String salary, String remote, Date postedDate, String jobTitle) {
         this.jobPostId = jobPostId;
-    }
-
-    @Override
-    public String toString() {
-        return "JobPostActivity{" +
-                "jobPostId=" + jobPostId +
-                ", postedById=" + postedById +
-                ", jobLocationId=" + jobLocationId +
-                ", jobCompanyId=" + jobCompanyId +
-                ", isActive=" + isActive +
-                ", isSaved=" + isSaved +
-                ", descriptionOfJob='" + descriptionOfJob + '\'' +
-                ", jobType='" + jobType + '\'' +
-                ", salary='" + salary + '\'' +
-                ", remote='" + remote + '\'' +
-                ", postedDate=" + postedDate +
-                ", jobTitle='" + jobTitle + '\'' +
-                '}';
+        this.postedById = postedById;
+        this.jobLocationId = jobLocationId;
+        this.jobCompanyId = jobCompanyId;
+        this.isActive = isActive;
+        this.isSaved = isSaved;
+        this.descriptionOfJob = descriptionOfJob;
+        this.jobType = jobType;
+        this.salary = salary;
+        this.remote = remote;
+        this.postedDate = postedDate;
+        this.jobTitle = jobTitle;
     }
 
     public Integer getJobPostId() {
@@ -111,19 +92,19 @@ public class JobPostActivity {
         this.jobCompanyId = jobCompanyId;
     }
 
-    public boolean isActive() {
+    public Boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(boolean active) {
+    public void setIsActive(Boolean active) {
         isActive = active;
     }
 
-    public boolean isSaved() {
+    public Boolean getIsSaved() {
         return isSaved;
     }
 
-    public void setSaved(boolean saved) {
+    public void setIsSaved(Boolean saved) {
         isSaved = saved;
     }
 
@@ -173,5 +154,23 @@ public class JobPostActivity {
 
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "JobPostActivity{" +
+                "jobPostId=" + jobPostId +
+                ", postedById=" + postedById +
+                ", jobLocationId=" + jobLocationId +
+                ", jobCompanyId=" + jobCompanyId +
+                ", isActive=" + isActive +
+                ", isSaved=" + isSaved +
+                ", descriptionOfJob='" + descriptionOfJob + '\'' +
+                ", jobType='" + jobType + '\'' +
+                ", salary='" + salary + '\'' +
+                ", remote='" + remote + '\'' +
+                ", postedDate=" + postedDate +
+                ", jobTitle='" + jobTitle + '\'' +
+                '}';
     }
 }
